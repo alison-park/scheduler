@@ -54,7 +54,7 @@ const addCourseTimes = course => ({
   ...timeParts(course.meets)
 });
 
-const addScheduleTimes = schedule => ({
+export const addScheduleTimes = schedule => ({
   title: schedule.title,
   courses: mapValues(addCourseTimes, schedule.courses)
 });

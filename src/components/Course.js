@@ -1,6 +1,6 @@
 import { hasConflict, timeConflict, terms } from '/Users/alisonpark/Desktop/CS394/good/scheduler/src/utilities/times.js';
 
-const Course = ({ course, selected, setSelected }) => {
+export const Course = ({ course, selected, setSelected }) => {
     const isSelected = selected.includes(course);
     const isDisabled = !isSelected && hasConflict(course, selected);
     const style = {
@@ -27,12 +27,12 @@ const getCourseNumber = course => (
   );
   
 
-
+  
 const toggle = (x, lst) => (
     lst.includes(x) ? lst.filter(y => y !== x) : [x, ...lst]
   );
 
 
-const getCourseTerm = course => (
+export const getCourseTerm = course => (
     terms[course.id.charAt(0)]
   );

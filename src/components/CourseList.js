@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { hasConflict, timeConflict, terms } from '/Users/alisonpark/Desktop/CS394/good/scheduler/src/utilities/times.js';
-import Course from './Course.js';
+import {Course, getCourseTerm} from './Course.js';
 
 const CourseList = ({ courses }) => {
     const [term, setTerm] = useState('Fall');
@@ -23,16 +23,6 @@ const CourseList = ({ courses }) => {
   };
 
 
-const getCourseNumber = course => (
-    course.id.slice(1, 4)
-  );
-  
-
-
-const toggle = (x, lst) => (
-    lst.includes(x) ? lst.filter(y => y !== x) : [x, ...lst]
-  );
-
 
 const TermSelector = ({term, setTerm}) => (
     <div className="btn-group">
@@ -54,8 +44,6 @@ const TermSelector = ({term, setTerm}) => (
     </>
   );
 
-const getCourseTerm = course => (
-    terms[course.id.charAt(0)]
-  );
+
 
   export default CourseList;
